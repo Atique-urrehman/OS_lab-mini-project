@@ -1,0 +1,19 @@
+CC = gcc
+CFLAGS = -Wall -Wextra -pthread -g
+
+OBJ = server.o client_queue.o task_queue.o
+CLIENT_OBJ = client.o
+
+all: server client
+
+server: $(OBJ)
+	$(CC) $(CFLAGS) -o server $(OBJ)
+
+client: $(CLIENT_OBJ)
+	$(CC) $(CFLAGS) -o client $(CLIENT_OBJ)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $<
+
+clean:
+	rm -f *.o server client
