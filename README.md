@@ -1,4 +1,4 @@
-# Simple Dropbox Clone — Phase 1
+# Simple Dropbox Clone 
 
 ## Build
 $ make
